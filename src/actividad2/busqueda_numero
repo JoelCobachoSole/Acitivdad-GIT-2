@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class MatrizApp {
+    public static void main(String[] args) {
+        int[][] matriz = generarMatriz();
+        mostrarMatriz(matriz);
+        buscarNumero(matriz);
+    }
+
+    public static void buscarNumero(int[][] matriz) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese un número a buscar: ");
+        int numero = scanner.nextInt();
+        boolean encontrado = false;
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (matriz[i][j] == numero) {
+                    System.out.printf("Número %d encontrado en la posición (%d, %d)\n", numero, i, j);
+                    encontrado = true;
+                }
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Número no encontrado en la matriz.");
+        }
+    }
+}
